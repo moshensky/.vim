@@ -7,6 +7,10 @@
 set nocompatible
 
 
+call pathogen#infect()
+"call pathogen#Helptags
+
+
 "set font and size
 set guifont=Consolas
 
@@ -19,6 +23,7 @@ let g:molokai_original = 1 " 1 original, 0 dark background
 "Syntax Highlighting
 syntax enable
 syntax on
+filetype plugin indent on
 
 
 "Identation
