@@ -37,7 +37,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"
+"Set the initial size of the vim window
+set lines=50 columns=100
+
+
 "toggle paste mode (to paste properly indented text)
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
