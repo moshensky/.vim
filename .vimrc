@@ -31,6 +31,13 @@ set autoindent
 set copyindent
 set smartindent
 
+
+"No tabs, all tab characters are 4 space characters
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+"
 "toggle paste mode (to paste properly indented text)
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
