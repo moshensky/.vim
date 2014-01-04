@@ -1,14 +1,10 @@
 "TODO:
 "how to set font size
-"hpw to set status line
+"how to set status line
 
 
 "set NOCOMPATIBLE
 set nocompatible
-
-
-call pathogen#infect()
-"call pathogen#Helptags
 
 
 "set font and size
@@ -16,7 +12,7 @@ set guifont=Consolas
 
 
 "color scheme evening or desert
-colorscheme molokai "desert 
+colorscheme molokai 
 let g:molokai_original = 1 " 1 original, 0 dark background
 
 
