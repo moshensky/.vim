@@ -1,0 +1,3 @@
+For windows create symlinks:
+mklink /h .vimrc .vim\.vimrc
+mklink /d /j vimfiles .vim
