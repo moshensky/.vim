@@ -45,6 +45,8 @@ filetype plugin indent on     " required!
 "how to set status line
 
 
+" spell checking
+setlocal spell spelllang=bg
 
 
 "set font and size
@@ -62,7 +64,7 @@ syntax on
 filetype plugin indent on
 
 
-"Identation
+"Indentation
 set autoindent
 set copyindent
 set smartindent
@@ -110,7 +112,7 @@ set showmatch		"show matching brackets
 
 
 "Setting Search behaviour
-set ignorecase		"do case insensiive matching
+set ignorecase		"do case insensitive matching
 set smartcase		"do smart case matching
 set incsearch		"show the pattern while typing
 set hlsearch		"highlights searches
