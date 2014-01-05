@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved
+set encoding=utf-8
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -14,6 +15,7 @@ Bundle 'gmarik/vundle'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 "Bundle 'SirVer/ultisnips'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -46,7 +48,7 @@ filetype plugin indent on     " required!
 
 
 " spell checking
-setlocal spell spelllang=bg
+setlocal spell spelllang=en
 
 
 "set font and size
@@ -116,7 +118,7 @@ set ignorecase		"do case insensitive matching
 set smartcase		"do smart case matching
 set incsearch		"show the pattern while typing
 set hlsearch		"highlights searches
-"Presing \<space> clears the search highlights
+"Pressing \<space> clears the search highlights
 nmap <silent> <leader><space> :nohlsearch<CR>
 
 
@@ -138,9 +140,11 @@ set nowb
 "Redefine commands
 "use jj to quickly escape to normal mode while typing
 inoremap jj <ESC>
+inoremap йй <ESC>
 "press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
 
+set langmap =Ч~,ЯQ,ВW,ЕE,РR,ТT,ЪY,УU,ИI,ОO,ПP,Ш{,Щ},АA,СS,ДD,ФF,ГG,ХH,ЙJ,КK,ЛL,ЗZ,ЬZ,ЦC,ЖV,БB,НN,МM,ч`,яq,вw,еe,рr,тt,ъy,уu,иi,оo,пp,ш[,щ],аa,сs,дd,фf,гg,хh,йj,кk,лl,зz,ьz,цc,жv,бb,нn,мm
 
 " Statusline (c) Winterdom
 " http://winterdom.com/2007/06/vimstatusline
@@ -178,5 +182,5 @@ if has('statusline')
 endif
 
 
-
-
+" Add colon and hyphen to the iskeyword variable only when editing .tex files
+autocmd BufRead,BufNewFile *.tex set iskeyword+=:,-
