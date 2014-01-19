@@ -140,8 +140,8 @@ set nowb
 
 "Redefine commands
 "use jj to quickly escape to normal mode while typing
-inoremap jj <ESC>
-inoremap йй <ESC>
+inoremap jj <ESC>:w<CR>
+inoremap йй <ESC>:w<CR>
 "press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
 
