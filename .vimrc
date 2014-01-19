@@ -16,6 +16,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 "Bundle 'SirVer/ultisnips'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'PProvost/vim-ps1'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -184,3 +185,7 @@ endif
 
 " Add colon and hyphen to the iskeyword variable only when editing .tex files
 autocmd BufRead,BufNewFile *.tex set iskeyword+=:,-
+
+" Set PoerShell as a shell
+"set shell=powershell
+"set shellcmdflag=-command
