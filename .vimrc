@@ -13,6 +13,8 @@ Bundle 'gmarik/vundle'
 " original repos on GitHub
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 "Bundle 'SirVer/ultisnips'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
@@ -49,7 +51,7 @@ filetype plugin indent on     " required!
 
 
 " spell checking
-setlocal spell spelllang=bg
+setlocal spell spelllang=en
 
 
 "set font and size
@@ -141,7 +143,7 @@ set nowb
 "Redefine commands
 "use jj to quickly escape to normal mode while typing
 inoremap jj <ESC>:w<CR>
-inoremap йй <ESC>:w<CR>
+
 "press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
 
@@ -189,3 +191,9 @@ autocmd BufRead,BufNewFile *.tex set iskeyword+=:,-
 " Set PoerShell as a shell
 "set shell=powershell
 "set shellcmdflag=-command
+"
+"
+
+
+" Enable code folding for JavaScript
+au FileType javascript call JavaScriptFold()
