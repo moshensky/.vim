@@ -1,3 +1,5 @@
+" Javascript http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
+"# Vundle Config ##############################################################
 set nocompatible              " be iMproved
 set encoding=utf-8
 filetype off                  " required!
@@ -10,25 +12,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My bundles here:
-" original repos on GitHub
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-surround'
-"Bundle 'SirVer/ultisnips'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'PProvost/vim-ps1'
-
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-
-" non-GitHub repos
-"Bundle 'git://git.wincent.com/command-t.git'
-
-" Git repos on your local machine (i.e. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
+Bundle 'marijnh/tern_for_vim'
 
 filetype plugin indent on     " required!
 "
@@ -40,40 +26,19 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed."
-
-
-
-
-
-""TODO:
-"how to set font size
-"how to set status line
-
-
-" spell checking
-setlocal spell spelllang=en
+"# End Vundle Config ##########################################################
 
 
 "set font and size
 set guifont=Consolas
 
-
 "color scheme evening or desert
-colorscheme molokai 
-let g:molokai_original = 1 " 1 original, 0 dark background
+colorscheme distinguished
 
 
 "Syntax Highlighting
 syntax enable
 syntax on
-filetype plugin indent on
-
-
-"Indentation
-set autoindent
-set copyindent
-set smartindent
-
 
 "No tabs, all tab characters are 4 space characters
 set tabstop=4
@@ -90,19 +55,9 @@ set pastetoggle=<F2>
 set showmode
 
 
-"Adding menu items
-amenu		Tabs.&Delete		:confirm tabclose<cr>
-amenu		Tabs.&Alternate		:confirm tabn #<cr>
-amenu		<silent>Tabs.&Next	:tabnext<cr>
-amenu		<silent>Tabs.&Previous	:tabprevious<cr> 
-
-
-"Adding Toolbar Icons
-amenu icon=$VIM/vimfiles/bitmaps/test.bmp ToolBar.Bufferlist :buffers<cr>
-
-
 "Adding Line Numbers
 set number
+set relativenumber 
 set numberwidth=5
 highlight LineNr guibg=#555555 guifg=#FFFFFF 
 
@@ -139,7 +94,6 @@ set nobackup
 set nowb
 
 
-
 "Redefine commands
 "use jj to quickly escape to normal mode while typing
 inoremap jj <ESC>:w<CR>
@@ -148,6 +102,10 @@ inoremap jj <ESC>:w<CR>
 nnoremap ; :
 
 set langmap =Ч~,ЯQ,ВW,ЕE,РR,ТT,ЪY,УU,ИI,ОO,ПP,Ш{,Щ},АA,СS,ДD,ФF,ГG,ХH,ЙJ,КK,ЛL,ЗZ,ЬZ,ЦC,ЖV,БB,НN,МM,ч`,яq,вw,еe,рr,тt,ъy,уu,иi,оo,пp,ш[,щ],аa,сs,дd,фf,гg,хh,йj,кk,лl,зz,ьz,цc,жv,бb,нn,мm,ьx
+
+nmap <F8> :TagbarToggle<CR>
+
+
 
 " Statusline (c) Winterdom
 " http://winterdom.com/2007/06/vimstatusline
@@ -184,16 +142,3 @@ if has('statusline')
    endif
 endif
 
-
-" Add colon and hyphen to the iskeyword variable only when editing .tex files
-autocmd BufRead,BufNewFile *.tex set iskeyword+=:,-
-
-" Set PoerShell as a shell
-"set shell=powershell
-"set shellcmdflag=-command
-"
-"
-
-
-" Enable code folding for JavaScript
-au FileType javascript call JavaScriptFold()
