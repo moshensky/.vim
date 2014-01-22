@@ -17,6 +17,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ramitos/jsctags'
+Bundle 'jelera/vim-javascript-syntax'
 
 filetype plugin indent on     " required!
 "
@@ -145,3 +146,6 @@ if has('statusline')
    endif
 endif
 
+
+" Enhanced JavaScript syntax for vim folding enable
+au FileType javascript call JavaScriptFold()
