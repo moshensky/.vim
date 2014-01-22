@@ -15,6 +15,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'ramitos/jsctags'
 
 filetype plugin indent on     " required!
 "
@@ -33,7 +35,8 @@ filetype plugin indent on     " required!
 set guifont=Consolas
 
 "color scheme evening or desert
-colorscheme distinguished
+"colorscheme distinguished
+colorscheme molokai 
 
 
 "Syntax Highlighting
