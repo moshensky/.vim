@@ -19,6 +19,10 @@ Bundle 'majutsushi/tagbar'
 Bundle 'ramitos/jsctags'
 Bundle 'jelera/vim-javascript-syntax'
 
+" Colorschemes
+Bundle 'marcus/vim-mustang'
+Bundle 'altercation/vim-colors-solarized'
+
 filetype plugin indent on     " required!
 "
 " Brief help
@@ -33,16 +37,21 @@ filetype plugin indent on     " required!
 
 
 "set font and size
-set guifont=Consolas
+set guifont=Consolas:h10
+"set guifont=Lucida_Console:h10
+
+
+"Syntax Highlighting
+set background=light
+syntax enable
+syntax on
+
 
 "color scheme evening or desert
 "colorscheme distinguished
 colorscheme molokai 
+"color desert
 
-
-"Syntax Highlighting
-syntax enable
-syntax on
 
 "No tabs, all tab characters are 4 space characters
 set tabstop=4
