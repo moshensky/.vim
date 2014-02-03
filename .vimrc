@@ -18,6 +18,9 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ramitos/jsctags'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'sjbach/lusty'
 
 " Colorschemes
 Bundle 'marcus/vim-mustang'
@@ -110,6 +113,7 @@ set nowb
 "Redefine commands
 "use jj to quickly escape to normal mode while typing
 inoremap jj <ESC>:w<CR>
+inoremap йй <ESC>:w<CR>
 
 "press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
@@ -118,6 +122,9 @@ set langmap =Ч~,ЯQ,ВW,ЕE,РR,ТT,ЪY,УU,ИI,ОO,ПP,Ш{,Щ},АA,СS,ДD,ФF
 
 nmap <F8> :TagbarToggle<CR>
 
+" Format HTML into JavaScript concatenated string.
+vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
+vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
 
 
 " Statusline (c) Winterdom
@@ -158,3 +165,7 @@ endif
 
 " Enhanced JavaScript syntax for vim folding enable
 au FileType javascript call JavaScriptFold()
+
+let g:EasyMotion_leader_key = '<Leader>'
+
+set hidden

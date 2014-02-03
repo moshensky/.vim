@@ -3,3 +3,7 @@ mklink /h .vimrc .vim\.vimrc
 mklink /d /j vimfiles .vim
 
 ultisnips requires python installed
+
+
+executables for windows with compiled support for python, ruby, perl and others:
+http://wyw.dcweb.cn/
