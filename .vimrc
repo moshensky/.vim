@@ -134,6 +134,7 @@ set ls=2 " Always show status line
 if has('statusline')
    " Status line detail:
    " %f     file path
+   " %t S   File name (tail) of file in the buffer.
    " %y     file type between braces (if defined)
    " %([%R%M]%)   read-only, modified and modifiable flags between braces
    " %{'!'[&ff=='default_file_format']}
@@ -148,9 +149,9 @@ if has('statusline')
    " %l/%L,%c%V   line number, total number of lines, and column number
    function SetStatusLineStyle()
       if &stl == '' || &stl =~ 'synID'
-         let &stl="%f %y%([%R%M]%)%{'!'[&ff=='".&ff."']}%{'$'[!&list]}%{'~'[&pm=='']}%=buff:#%n line:%l/%L col:%c%V "
+         let &stl="%t %([%R%M]%)%{'!'[&ff=='".&ff."']}%{'$'[!&list]}%{'~'[&pm=='']}%=buff:#%n line:%l/%L col:%c%V "
       else
-         let &stl="%f %y%([%R%M]%)%{'!'[&ff=='".&ff."']}%{'$'[!&list]} (%{synIDattr(synID(line('.'),col('.'),0),'name')})%=buff:#%n line:%l/%L col%c%V "
+         let &stl="%t %([%R%M]%)%{'!'[&ff=='".&ff."']}%{'$'[!&list]} (%{synIDattr(synID(line('.'),col('.'),0),'name')})%=buff:#%n line:%l/%L col%c%V "
       endif
    endfunc
    " Switch between the normal and vim-debug modes in the status line
